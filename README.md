@@ -17,7 +17,7 @@ email will be sent to the user for the payment received.
 ## Sample Styling
 
 ### HomePage
-[homepage](https://github.com/anishashruti/Helping-Hands/blob/main/HelpingHands/home.PNG)
+![homepage](https://github.com/anishashruti/Helping-Hands/blob/main/HelpingHands/home.PNG)
 
 ### Donation Form
-[Donationform]()
+![Donationform](https://raw.githubusercontent.com/anishashruti/Helping-Hands/main/HelpingHands/donation%20page.PNG)
