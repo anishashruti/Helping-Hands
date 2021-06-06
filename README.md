@@ -13,3 +13,11 @@ email will be sent to the user for the payment received.
 
 ## Color Palette used:
 [Palatte](https://colorhunt.co/palette/196018)
+
+## Sample Styling
+
+### HomePage
+[homepage](https://github.com/anishashruti/Helping-Hands/blob/main/HelpingHands/home.PNG)
+
+### Donation Form
+[Donationform]()
