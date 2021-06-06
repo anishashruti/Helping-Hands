@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<div>
+    <div class="header-container">
+        <div class="head-left">
+            <img class="mylogo" src="{% static "images/icon.png" %}"  height="80">
+            <h1 class="title-name">Helping Hands</h1>
+        </div>
+        <div class="head-right">
+            <h5 id="about">Get To Know About Us</h5>
+        </div>
+
+    </div>
+    <br>
+    <div class="main-box">
+        <div class="left">
+            <img class="hands" src="{% static "images/hands.png" %}" height=300>
+        </div>
+        <div class="right">
+            <p class="quote">“  No one has ever 
+                become poor by giving ” 
+                <br>
+                -Anne Frank
+                </p>
+            <p class="tag-text">You are just one click away from helping</p>
+            <div class="btndiv">
+                <a href="{% url 'base:donate' %}" >Donate</a>
+            </div> 
+        </div>
+    </div>    
+</div>
+{% endblock content %}
