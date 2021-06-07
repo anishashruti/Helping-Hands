@@ -8,7 +8,7 @@ Donate
 <script src="{% static 'javascript/main.js' %}"></script>
 {% endblock scripts %}
 {% block content %}
-<form  method="post" id="payment-form">
+<form action="{% url 'base:charge' %}"  method="post" id="payment-form">
     {% csrf_token %}
     <div class="form-field-12">
         <label for="amount">Donate</label>
@@ -24,9 +24,6 @@ Donate
     <div class="form-field-6">
         <input required type="text" name="email" placeholder="Email">
     </div>
-
-
-
   <div class="form-row">
     <label for="card-element">
       Credit or debit card
