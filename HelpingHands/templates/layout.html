@@ -17,6 +17,8 @@
 
     <!-- Custom js & css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/donate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/done.css' %}">
     <script src="{% static 'javascript/main.js' %}"></script>
     {% block scripts %}
     {% endblock scripts %}
@@ -31,7 +33,7 @@
   </head>
   <script src="https://js.stripe.com/v3/"></script>
   <body>
-    <div class="container mt-3 mb-3">
+    <div class="container mt-4 mb-4">
         {% block content %}
         {% endblock content %}
     </div>

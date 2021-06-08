@@ -19,7 +19,7 @@ def donate(request):
 def charge(request):
 	if request.method == 'POST':
 		amount = int(request.POST['amount'])
-
+		name=request.POST['name']
 		customer = stripe.Customer.create(
 			email=request.POST['email'],
 			name=request.POST['name'],
@@ -28,12 +28,12 @@ def charge(request):
 
 		charge = stripe.Charge.create(
 			customer=customer,
-			amount=amount,
+			amount=amount*100,
 			currency='inr',
 			description="Donation",
 			)
 	return redirect(reverse('base:thanks', args=[amount]))
 
-def thanks(request, args):
+def thanks(request,args):
 	amount = args
 	return render(request, 'base/done.html', {'amount':amount})

@@ -9,59 +9,62 @@ Donate
 {% endblock scripts %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/donate.css' %}">
-<div class="column-6">
-	<div id="left-wrapper">
-		<div id="left-wrapper-head">
-			<h3>Information</h3>
-		</div>
-		<hr>
-		<div id="left-wrapper-content">
-			<p>Pink ponies and purple giraffes roamed the field. Cotton candy grew from the ground as a chocolate river meandered off to the side. What looked like stones in the pasture were actually rock candy. Everything in her dream seemed to be perfect except for the fact that she had no mouth.</p>
-		</div>
-		<div id="about-btn">
-			About
+
+<div id="container">
+	<div class="column-6">
+		<div id="left-wrapper">
+			<div id="left-wrapper-head">
+				<h3>Information</h3>
+			</div>
+			<hr>
+			<div id="left-wrapper-content">
+				<p>Pink ponies and purple giraffes roamed the field. Cotton candy grew from the ground as a chocolate river meandered off to the side. What looked like stones in the pasture were actually rock candy. Everything in her dream seemed to be perfect except for the fact that she had no mouth.</p>
+			</div>
+			<div id="about-btn">
+			<p>About</p> 
+			</div>
 		</div>
 	</div>
-</div>
-<div class="column-6">
-	<div id="right-wrapper">
-		<div id="right-wrapper-head">
-			One Time Donation
-		</div>
-		<hr>
-		<form action="{% url 'base:charge' %}"  method="post" id="payment-form">
-			{% csrf_token %}
-			<div class="form-field-12">
+	<div class="column-6">
+		<div id="right-wrapper">
+			<div id="right-wrapper-head">
+				One Time Donation
+			</div>
+			<hr>
+			<form action="{% url 'base:charge' %}"  method="post" id="payment-form">
+				{% csrf_token %}
+				<div class="form-field-12">
+					<div class="form-field-6">
+					  <input required type="integer" name="amount" placeholder="Amount">
+				  </div>
+				</div>
 				<div class="form-field-6">
-				  <input required type="number" name="amount" placeholder="Amount">
+				  <input required type="text" name="name" placeholder="Name">
 			  </div>
-			</div>
-			<div class="form-field-6">
-			  <input required type="text" name="name" placeholder="Name">
-		  </div>
-			<div class="form-field-6">
-				<input required type="text" name="email" placeholder="Email">
-			</div>
-		  <div class="form-row">
-			<label for="card-element">
-			  Credit or debit card
-			</label>
-			<div id="card-element">
-			  <!-- A Stripe Element will be inserted here. -->
-			</div>
-		
-			<!-- Used to display form errors. -->
-			<div id="card-errors" role="alert"></div>
-		  </div>
-		  
-		  <div style="clear:left"></div>
-		  <br>
-			 <input  class="myButton" type="submit" value="Submit Payment" name="">
-		
-		</form>
+				<div class="form-field-6">
+					<input required type="text" name="email" placeholder="Email">
+				</div>
+			  <div class="form-row">
+				<label for="card-element">
+				  Credit or debit card
+				</label>
+				<div id="card-element">
+				  <!-- A Stripe Element will be inserted here. -->
+				</div>
+			
+				<!-- Used to display form errors. -->
+				<div id="card-errors" role="alert"></div>
+			  </div>
+			  
+			  <div style="clear:left"></div>
+			  <br>
+				 <input  class="myButton" type="submit" value="Submit Payment" name="">
+			
+			</form>
+		</div>
 	</div>
 </div>
+
 
 	<script>
     var stripe = Stripe('pk_test_51Gz20rIPDW7FrALV9nHGF02My5bHPpLXia3mV4BMqofdwgZJ4jOt7mFGM9wnAGhlxy0s85lVnW1Tn9a43J162Chp00rwYE95Gf');
@@ -78,7 +81,7 @@ Donate
 		    fontSmoothing: 'antialiased',
 		    fontSize: '16px',
 		    '::placeholder': {
-		      color: '#aab7c4'
+		      color: '#aab7c4',
 		    }
 		  },
 		  invalid: {
