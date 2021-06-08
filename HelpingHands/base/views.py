@@ -28,16 +28,9 @@ def charge(request):
 
 		charge = stripe.Charge.create(
 			customer=customer,
-			amount=amount*100,
+			amount=amount,
 			currency='inr',
 			description="Donation",
-			address={
-    'line1': '510 Townsend St',
-    'postal_code': '98140',
-    'city': 'San Francisco',
-    'state': 'CA',
-    'country': 'US',
-  },
 			)
 	return redirect(reverse('base:thanks', args=[amount]))
 
