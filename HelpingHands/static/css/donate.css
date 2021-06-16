@@ -15,8 +15,7 @@
       border-radius: 20px 0px 0px 20px;
       border: 1px solid transparent;
       padding: 30px;	
-      width:43vw;
-      height:90vh;
+      width:400px;
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: center;
@@ -53,8 +52,7 @@
       border-radius: 0px 20px 20px 0px;
       border: 1px solid transparent;
     padding: 30px;
-    width:43vw;
-    height:90vh;
+    width:800px;
     box-shadow: 0 1px 3px 0 black;
     display:flex;
     flex-direction: column;

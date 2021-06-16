@@ -44,19 +44,20 @@ body{
     
 }
 .right{
+    display: flex;
 text-align: center;
+align-items: center;
 padding:10%;
 }
 .quote{
     font-family: 'Abril Fatface', cursive;
-    font-size: 3vw;
 }
 .donate{
     font-family: 'Montserrat', sans-serif;
 }
 .tag-text{
     font-family: 'Montserrat', sans-serif;
-    font: size 3vw;
+    font-size: 10px;
 }
 .btndiv{
     height: 80px;
@@ -68,8 +69,15 @@ padding:10%;
 }
 .btndiv > a{
     font-family: 'Montserrat', sans-serif;
-    font-size:2vw;
+    font-size:15px;
     color:#EEEEEE;
     text-decoration: none;
-
+    margin-top: 5px;
 }
+
+@media screen and (max-width:300px)
+{
+.mylogo{
+    height:40px;
+}
+  }

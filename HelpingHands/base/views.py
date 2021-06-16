@@ -38,27 +38,24 @@ def charge(request):
 			)
 		our_customer=charge.get("customer")
 
-		invoice_create_item =stripe.InvoiceItem.create(
-  		customer=our_customer,
-		amount=d_amount*100,
-		currency='inr'
-		)
+		# invoice_create_item =stripe.InvoiceItem.create(
+  		# customer=our_customer,
+		# amount=d_amount*100,
+		# currency='inr'
+		# )
 
-		invoice = stripe.Invoice.create(
-		customer=our_customer,
-		collection_method='charge_automatically',
-		description="Donation for Helping Hands",
-		)
-
-		intent= stripe.PaymentIntent.create(
-  		customer=our_customer,
-		amount=d_amount*100,
-		currency="inr",
-		receipt_email=email,
-		payment_method_types=["card"],
-		)
-
-		print(intent)
+		# invoice = stripe.Invoice.create(
+		# customer=our_customer,
+		# collection_method='charge_automatically',
+		# description="Donation for Helping Hands",
+		# )
+		payment_intent=stripe.PaymentIntent.create(
+			amount=d_amount*100,
+			currency='inr',
+			payment_method_types=['card'],
+			receipt_email=email,
+			)
+		print(payment_intent)
 	return redirect(reverse('base:thanks', args=[d_amount]))
 
 def thanks(request,args):
