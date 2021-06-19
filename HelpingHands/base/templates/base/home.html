@@ -3,8 +3,8 @@
 {% block title %}
 Home
 {% endblock title %}
-
 {% block content %}
+
 <div>
     <div class="header-container">
         <div class="head-left">
@@ -31,7 +31,16 @@ Home
             <div class="btndiv">
                 <a href="{% url 'base:donate' %}" >Donate</a>
             </div> 
-        </div>
-    </div>    
+        </div>    
+</div>
+<div class="whatwegive">
+    <div class="left-kit">
+       
+        <img class="hands" src="{% static "images/kit.png" %}" height=310>
+    </div>
+    <div class="all-items">
+        <p>We give people Covid-19 Care-Kit for Free!!</p>
+        <img class="hands" src="{% static "images/kit-content.gif" %}" height=450>
+    </div> 
 </div>
 {% endblock content %}
