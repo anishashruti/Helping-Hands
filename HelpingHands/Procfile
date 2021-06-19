@@ -1,0 +1,1 @@
+web: gunicorn HelpingHands.wsgi --log-file -
