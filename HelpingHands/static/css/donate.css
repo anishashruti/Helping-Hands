@@ -1,4 +1,5 @@
-/* left and right of donation page  */
+
+	/* left and right of donation page  */
 #container{
   width:1200px;
   margin:0 auto;
@@ -15,11 +16,8 @@
       border-radius: 20px 0px 0px 20px;
       border: 1px solid transparent;
       padding: 30px;	
-      width:400px;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+	    width:600px;
+      height: 600px;
       padding:50px;
   }
     
@@ -52,13 +50,14 @@
       border-radius: 0px 20px 20px 0px;
       border: 1px solid transparent;
     padding: 30px;
-    width:800px;
+    width:600px;
     box-shadow: 0 1px 3px 0 black;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: 600px;
   }
 
   #right-wrapper-head{
@@ -122,13 +121,14 @@
     padding-top: 5px;
   }
   .form-field-6{
-    width: 50%;
+    width: 100%;
     margin-bottom: 10px;
   }
   input {
     border-radius: 6px;
     margin-bottom: 6px;
     border: 1px solid rgba(50, 50, 93, 0.1);
+	width: 100px;
     height: 44px;
     font-size: 16px;
     width: 100%;
