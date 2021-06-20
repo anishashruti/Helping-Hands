@@ -17,6 +17,8 @@ email will be sent to the user for the payment received.
 
 ## Sample Styling
 
+I used Figma to design the website's UI.
+The following are the designs i made before starting the project
 ### HomePage
 ![homepage](https://github.com/anishashruti/Helping-Hands/blob/main/HelpingHands/home.PNG)
 
