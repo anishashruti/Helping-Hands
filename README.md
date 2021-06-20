@@ -3,6 +3,10 @@
 A donation application using django with payment gateway integration.
 I have used Stripe API as a payment gateway
 
+
+## Deployed code
+[Check it out!](https://helpinghandso.herokuapp.com/)
+
 ## Requirements Given:
 
 1. There will be a simple donate button on homepage. 
@@ -25,5 +29,5 @@ The following are the designs i made before starting the project
 ### Donation Form
 ![Donationform](https://raw.githubusercontent.com/anishashruti/Helping-Hands/main/HelpingHands/donation%20page.PNG)
 
-##Youtube 
-https://youtu.be/wokfPWSoLrE
+## Youtube Link
+[Youtube](https://youtu.be/wokfPWSoLrE)
