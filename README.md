@@ -1,6 +1,7 @@
 # Helping-Hands
 
 A donation application using django with payment gateway integration.
+I have used Stripe API as a payment gateway
 
 ## Requirements Given:
 
