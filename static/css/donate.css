@@ -1,0 +1,179 @@
+
+	/* left and right of donation page  */
+#container{
+  width:1200px;
+  margin:0 auto;
+  padding-top: 3%;
+}
+.column-6{
+  width: 50%;
+  float:left;
+}
+  #left-wrapper{
+      display: flex;
+      background-color: #4F8A8B;
+      box-shadow: 0 1px 3px 0 black;
+      border-radius: 20px 0px 0px 20px;
+      border: 1px solid transparent;
+      padding: 30px;	
+	    width:600px;
+      height: 600px;
+      padding:50px;
+  }
+    
+  #left-wrapper-head{
+    color:#fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size:24px;
+  }
+  #left-wrapper-content{
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+    font-size:20px;
+  }
+    #about-btn{
+     width:20vw;
+     height:7vh;
+    background-color:#222831;
+    border-radius: 10px;
+    color: #EEEEEE;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #about-btn > p{
+    padding: 20px;
+  }
+
+  #right-wrapper{
+    background-color: #EEEEEE;
+      border-radius: 0px 20px 20px 0px;
+      border: 1px solid transparent;
+    padding: 30px;
+    width:600px;
+    box-shadow: 0 1px 3px 0 black;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
+
+  #right-wrapper-head{
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  @media screen and (max-width:1200px){
+    #container{
+      width:80%;
+    }
+
+    .column-6{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width:800px){
+    #container{
+      width:100%;
+    }
+  }
+
+  /* stripe element styling */
+
+  .StripeElement {
+    box-sizing: border-box;
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+/* form styling */
+
+  .form-field-12{
+    width: 100%;
+    margin-bottom: 10px;
+    padding-top: 5px;
+  }
+  .form-field-6{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  input {
+    border-radius: 6px;
+    margin-bottom: 6px;
+    border: 1px solid rgba(50, 50, 93, 0.1);
+	width: 100px;
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    background: #4f8a8b4f;
+    align-content: center;
+  }
+
+  input::placeholder {
+    color: #9fa1a6;
+  }
+  .result-message {
+    line-height: 22px;
+    font-size: 16px;
+  }
+  .result-message a {
+    color: rgb(89, 111, 214);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .hidden {
+    display: none;
+  }
+  #card-error {
+    color: rgb(105, 115, 134);
+    text-align: left;
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: 12px;
+  }
+  #card-element {
+    border-radius: 6px ;
+    padding: 12px;
+    height: 44px;
+    width: 100%;
+    background: #4f8a8b4f;
+  }
+  .myButton{
+    width:20vw;
+     height:7vh;
+    background-color:#222831;
+    border-radius: 10px;
+    color: #EEEEEE;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .myButton:hover {
+    opacity: .6;
+  }

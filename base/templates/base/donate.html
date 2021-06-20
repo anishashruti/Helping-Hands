@@ -1,0 +1,328 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+Donate
+{% endblock title %}
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
+<style>
+	/* left and right of donation page  */
+#container{
+  width:1200px;
+  margin:0 auto;
+  padding-top: 3%;
+}
+.column-6{
+  width: 50%;
+  float:left;
+}
+  #left-wrapper{
+      display: flex;
+      flex-direction: column;
+      background-color: #4F8A8B;
+      box-shadow: 0 1px 3px 0 black;
+      border-radius: 20px 0px 0px 20px;
+      border: 1px solid transparent;
+      padding: 30px;	
+	    width:600px;
+      height: 600px;
+      padding:50px;
+  }
+    
+  #left-wrapper-head{
+    color:#fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size:24px;
+  }
+  #left-wrapper-content{
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+    font-size:20px;
+  }
+    #about-btn{
+     width:20vw;
+     height:7vh;
+    background-color:#222831;
+    border-radius: 10px;
+    color: #EEEEEE;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #about-btn > p{
+    padding: 20px;
+  }
+
+  #right-wrapper{
+    background-color: #EEEEEE;
+      border-radius: 0px 20px 20px 0px;
+      border: 1px solid transparent;
+    padding: 30px;
+    width:600px;
+    box-shadow: 0 1px 3px 0 black;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
+
+  #right-wrapper-head{
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  @media screen and (max-width:1200px){
+    #container{
+      width:80%;
+    }
+
+    .column-6{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width:800px){
+    #container{
+      width:100%;
+    }
+  }
+
+  /* stripe element styling */
+
+  .StripeElement {
+    box-sizing: border-box;
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+/* form styling */
+
+  .form-field-12{
+    width: 100%;
+    margin-bottom: 10px;
+    padding-top: 5px;
+  }
+  .form-field-6{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  input {
+    border-radius: 6px;
+    margin-bottom: 6px;
+    border: 1px solid rgba(50, 50, 93, 0.1);
+	width: 100px;
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    background: #4f8a8b4f;
+    align-content: center;
+  }
+
+  input::placeholder {
+    color: #9fa1a6;
+  }
+  .result-message {
+    line-height: 22px;
+    font-size: 16px;
+  }
+  .result-message a {
+    color: rgb(89, 111, 214);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .hidden {
+    display: none;
+  }
+  #card-error {
+    color: rgb(105, 115, 134);
+    text-align: left;
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: 12px;
+  }
+  #card-element {
+    border-radius: 6px ;
+    padding: 12px;
+    height: 44px;
+    width: 100%;
+    background: #4f8a8b4f;
+  }
+  .myButton{
+    width:20vw;
+     height:7vh;
+    background-color:#222831;
+    border-radius: 10px;
+    color: #EEEEEE;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .myButton:hover {
+    opacity: .6;
+  }
+
+</style>
+<div id="container">
+	<div class="column-6">
+		<div id="left-wrapper">
+			<div id="left-wrapper-head">
+				<h3>Information</h3>
+			</div>
+			<hr>
+			<div id="left-wrapper-content">
+				<p>
+          For more than a year now we have been distributing free Covid-19 Care-kits to people who are in need.
+        </p>
+        <p>
+          We never compromise on the quality of things we give away and yes they cost a lot your small contribution to our non-profit initiative will be very beneficial!
+	        <br>
+        </p>
+        <p>
+          We give good quality masks, hand sanitizers, multivitamins tablets, and some guides.
+          <br>
+          Thanks in advance.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="column-6">
+		<div id="right-wrapper">
+			<div id="right-wrapper-head">
+				One Time Donation
+			</div>
+			<hr>
+			<form action="{% url 'base:charge' %}"  method="post" id="payment-form">
+				{% csrf_token %}
+				<div class="form-field-12">
+					<div class="form-field-6">
+					  <input required type="integer" name="amount" placeholder="Amount">
+				  </div>
+				</div>
+				<div class="form-field-6">
+				  <input required type="text" name="name" placeholder="Name">
+			  </div>
+				<div class="form-field-6">
+					<input required type="text" name="email" placeholder="Email">
+				</div>
+			  <div class="form-row">
+				<label for="card-element">
+				  Credit or debit card
+				</label>
+				<div id="card-element">
+				  <!-- A Stripe Element will be inserted here. -->
+				</div>
+			
+				<!-- Used to display form errors. -->
+				<div id="card-errors" role="alert"></div>
+			  </div>
+			  
+			  <div style="clear:left"></div>
+			  <br>
+				 <input  class="myButton" type="submit" value="Submit Payment" name="">
+			
+			</form>
+		</div>
+	</div>
+</div>
+
+
+	<script>
+    var stripe = Stripe('pk_test_51Gz20rIPDW7FrALV9nHGF02My5bHPpLXia3mV4BMqofdwgZJ4jOt7mFGM9wnAGhlxy0s85lVnW1Tn9a43J162Chp00rwYE95Gf');
+
+		// Create an instance of Elements.
+		var elements = stripe.elements();
+
+		// Custom styling can be passed to options when creating an Element.
+		// (Note that this demo uses a wider set of styles than the guide below.)
+		var style = {
+		  base: {
+		    color: '#32325d',
+		    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+		    fontSmoothing: 'antialiased',
+		    fontSize: '16px',
+		    '::placeholder': {
+		      color: '#aab7c4',
+		    }
+		  },
+		  invalid: {
+		    color: '#fa755a',
+		    iconColor: '#fa755a'
+		  }
+		};
+
+		// Create an instance of the card Element.
+		var card = elements.create('card', {style: style});
+
+		// Add an instance of the card Element into the `card-element` <div>.
+		card.mount('#card-element');
+
+		// Handle real-time validation errors from the card Element.
+		card.addEventListener('change', function(event) {
+		  var displayError = document.getElementById('card-errors');
+		  if (event.error) {
+		    displayError.textContent = event.error.message;
+		  } else {
+		    displayError.textContent = '';
+		  }
+		});
+
+		// Handle form submission.
+		var form = document.getElementById('payment-form');
+		form.addEventListener('submit', function(event) {
+		  event.preventDefault();
+
+		  stripe.createToken(card).then(function(result) {
+		    if (result.error) {
+		      // Inform the user if there was an error.
+		      var errorElement = document.getElementById('card-errors');
+		      errorElement.textContent = result.error.message;
+		    } else {
+		      // Send the token to your server.
+		      stripeTokenHandler(result.token);
+		    }
+		  });
+		});
+
+		// Submit the form with the token ID.
+		function stripeTokenHandler(token) {
+		  // Insert the token ID into the form so it gets submitted to the server
+		  var form = document.getElementById('payment-form');
+		  var hiddenInput = document.createElement('input');
+		  hiddenInput.setAttribute('type', 'hidden');
+		  hiddenInput.setAttribute('name', 'stripeToken');
+		  hiddenInput.setAttribute('value', token.id);
+		  form.appendChild(hiddenInput);
+
+		  // Submit the form
+		  form.submit();
+		}
+  </script>
+{% endblock content %}

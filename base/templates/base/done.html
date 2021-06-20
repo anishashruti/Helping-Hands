@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+Thanks 
+{% endblock title %}
+{% block content %}
+	<div id="box">
+		<h3>Donation successful</h3>
+		<img src="{% static "images/tick.png" %}"  height="200">
+		<h4>Thank you for donating &#x20B9;{{amount}}</h4>
+		<p>You should receive a receipt to the email you provided shortly :)</p>
+	</div>
+{% endblock content %}

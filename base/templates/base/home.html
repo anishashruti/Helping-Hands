@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+
+<div class="main-content">
+    <div class="header-container">
+        <div class="head-left">
+            <img class="mylogo" src="{% static "images/icon.png" %}"  height="80">
+            <h1 class="title-name">Helping Hands</h1>
+        </div>
+        <div class="head-right">
+            <h5 id="about">Get To Know About Us</h5>
+        </div>
+
+    </div>
+    <br>
+    <div class="main-box">
+        <div class="left">
+            <img class="hands" src="{% static "images/hands.png" %}" height=300>
+        </div>
+        <div class="right">
+            <p class="quote">“  No one has ever 
+                become poor by giving ” 
+                <br>
+                -Anne Frank
+                </p>
+            <p class="tag-text">Let's do what we can to stay safe and help others stay safe. </p>
+            <div class="btndiv">
+                <a href="{% url 'base:donate' %}" >Donate</a>
+            </div> 
+        </div>    
+</div>
+<div class="we">
+    <p>We give people Covid-19 Care-Kit for Free!!</p>
+</div>
+<div class="whatwegive">
+    <div class="left-kit">
+        <img class="hands" src="{% static "images/kit.png" %}" height=310>
+    </div>
+    <div class="all-items">
+        <img class="hands" src="{% static "images/kit-content.gif" %}" height=450>
+    </div> 
+</div>
+<footer>
+    <div class="column">
+    <a class="footer_title">Helping Hands</a>
+    <a>We reachout to people who are in need of help and support them as much as we can</a>
+    <a href="#" title="Facebook"><i class="material-icons-round"></i></a>
+    <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+    </div>
+    <div class="column">
+    <a class="footer_title">OTHER LINKS</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Ticket</a>
+    <a href="#">Contact Us</a>
+    </div>
+    <div class="column">
+    <a class="footer_title">SHORT CUT</a>
+    <a href="">Our Services</a>
+    <a href="">Our Blog</a>
+    <a href="">Our Projects</a>
+    <a href="">About Us</a>
+    </div>
+    <div class="column">
+    <a class="footer_title">GET IN TOUCH</a>
+    <a title="Address"><i class="fa fa-map-marker"></i> 007, Rajam Nagar, Tamil nadu, India - 624531</a>
+    <a href="emailto:" title="Email"><i class="fa fa-envelope"></i>helpinghands@gmail.com</a>
+    <a href="tel:" title="Contact"><i class="fa fa-phone"></i> +(91)-5434-35355</a>
+    </div>
+    
+    <div class="sub-footer">
+    © CopyRights 2021 helpinghands || All rights reserved
+    </div>
+    </footer>
+{% endblock content %}
